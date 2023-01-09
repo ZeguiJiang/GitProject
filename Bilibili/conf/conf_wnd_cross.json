@@ -1,0 +1,44 @@
+{
+  "name": "conf",
+  "version": "1.0.0",
+  "conf": {
+    "feature_map": "conf/feature_map_eoe_withCombo.json",
+    "columns": "conf/columns_eoe_homepage_label_cross.ini",
+    "local_data": 0,
+    "local_train_data": "/data/",
+    "local_test_data": "/data/",
+    "DATA":{
+       "FEAT_TRAIN":{
+         "read_type": "remote",
+         "table_name": "ads_manga_eoe_training_homepage_cross_di",
+         "suffix": "dt"
+       },
+       "FEAT_TEST":{
+         "read_type": "remote",
+          "table_name": "ads_manga_eoe_testing_homepage_cross_di",
+          "suffix": "dt"
+       }
+    },
+    "PATH": {
+          "remote": "viewfs://jssz-bigdata-cluster/department/manga/warehouse",
+          "local": "/data"
+    },
+    "model_dir": "/summary_dir/",
+    "export_dir": "/model_dir/",
+    "id": "6759",
+    "max_step":200000,
+    "buffer_size": 20000,
+    "batch_size": 128,
+    "val_batch_size": 512,
+    "repeat": 20,
+    "val_step": 300,
+    "learning_rate": 0.05,
+    "l1_strength": 0.1,
+    "l2_strength": 0.5,
+    "prefetch_size":10,
+    "hidden_units": [256,128,64],
+    "dnn_hidden_units": [128, 64],
+    "ctr_label": "label"
+  }
+}
+

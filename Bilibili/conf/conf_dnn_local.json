@@ -1,0 +1,43 @@
+{
+  "name": "conf",
+  "version": "1.0.0",
+  "conf": {
+    "feature_map": "conf/feature_map_eoe_withCombo.json",
+    "columns": "conf/columns_3.ini",
+    "local_data": 0,
+    "local_train_data": "/data/",
+    "local_test_data": "/data/",
+    "DATA":{
+       "FEAT_TRAIN":{
+         "read_type": "raw",
+         "table_name": "eoe_train",
+         "suffix": "dt"
+       },
+       "FEAT_TEST":{
+         "read_type": "raw",
+          "table_name": "eoe_test",
+          "suffix": "dt"
+       }
+    },
+    "PATH": {
+          "remote": "viewfs://jssz-bigdata-cluster/department/manga/warehouse",
+          "local": "/data"
+    },
+    "model_dir": "/Users/monarch/PycharmProjects/model_zoo/summary_dir/",
+    "export_dir": "/Users/monarch/PycharmProjects/model_zoo/model_dir/",
+    "id": "6759",
+    "max_step":100,
+    "buffer_size": 20000,
+    "batch_size": 128,
+    "val_batch_size": 512,
+    "repeat": 20,
+    "val_step": 300,
+    "learning_rate": 0.5,
+    "l1_strength": 0.1,
+    "l2_strength": 0.5,
+    "prefetch_size":10,
+    "hidden_units": [256,128,64],
+    "ctr_label": "label"
+  }
+}
+
